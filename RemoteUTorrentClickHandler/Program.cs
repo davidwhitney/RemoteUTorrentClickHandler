@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using RemoteUTorrentClickHandler.Features;
 
 namespace RemoteUTorrentClickHandler
@@ -11,8 +8,18 @@ namespace RemoteUTorrentClickHandler
     {
         static void Main(string[] args)
         {
-            var aa = new AddMagnetHandlerCommand();
-            aa.Exeute();
+            if (args.Length == 0)
+            {
+                var handlerMapper = new MagnetHandlerMapper();
+                handlerMapper.RegisterHandlerToExecutable(typeof(Program).Assembly.Location);
+            }
+
+            var apiPath = ConfigurationManager.AppSettings["utorrent:webUiPath"];
+            var username = ConfigurationManager.AppSettings["utorrent:username"];
+            var password = ConfigurationManager.AppSettings["utorrent:password"];
+
+            var torrent = new UTorrentAPI.UTorrentClient(new Uri(apiPath), username, password);
+            torrent.Torrents.AddUrl(args[0]);
         }
     }
 }

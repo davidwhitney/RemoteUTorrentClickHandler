@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteUTorrentClickHandler", "RemoteUTorrentClickHandler\RemoteUTorrentClickHandler.csproj", "{6E08BE54-7C2E-4AC8-9234-A4A74C2463AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteUTorrentClickHandlerTests", "RemoteUTorrentClickHandlerTests\RemoteUTorrentClickHandlerTests.csproj", "{A28F5490-F8D0-47F0-88BC-4937A541DAFC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{6E08BE54-7C2E-4AC8-9234-A4A74C2463AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E08BE54-7C2E-4AC8-9234-A4A74C2463AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E08BE54-7C2E-4AC8-9234-A4A74C2463AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A28F5490-F8D0-47F0-88BC-4937A541DAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A28F5490-F8D0-47F0-88BC-4937A541DAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A28F5490-F8D0-47F0-88BC-4937A541DAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A28F5490-F8D0-47F0-88BC-4937A541DAFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

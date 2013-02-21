@@ -2,9 +2,9 @@
 
 namespace RemoteUTorrentClickHandler.Features
 {
-    class AddMagnetHandlerCommand
+    class MagnetHandlerMapper
     {
-        public void Exeute()
+        public void RegisterHandlerToExecutable(string myPath)
         {
             var regKey = Registry.CurrentUser.OpenSubKey("Software\\Classes", true);
 
@@ -14,7 +14,7 @@ namespace RemoteUTorrentClickHandler.Features
             magnetRoot.SetValue("URL Protocol", string.Empty);
             magnetRoot.CreateSubKey(@"DefaultIcon").SetValue(string.Empty, "c:\\path\\to\\ico.ico");
             magnetRoot.CreateSubKey(@"shell").SetValue(string.Empty, "open");
-            magnetRoot.CreateSubKey(@"shell\\open\\command").SetValue(string.Empty, "C:\\Program Files (x86)\\uTorrent\\uTorrent.exe\" \"%1\"");
+            magnetRoot.CreateSubKey(@"shell\\open\\command").SetValue(string.Empty, myPath + " \"%1\"");
         }
     }
 }
