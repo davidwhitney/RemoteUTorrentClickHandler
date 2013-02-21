@@ -10,8 +10,8 @@ namespace RemoteUTorrentClickHandler
         {
             if (args.Length == 0)
             {
-                var handlerMapper = new MagnetHandlerMapper();
-                handlerMapper.RegisterHandlerToExecutable(typeof(Program).Assembly.Location);
+                MagnetHandlerMapper.RegisterHandlerToExecutable(typeof(Program).Assembly.Location);
+                return;
             }
 
             var apiPath = ConfigurationManager.AppSettings["utorrent:webUiPath"];

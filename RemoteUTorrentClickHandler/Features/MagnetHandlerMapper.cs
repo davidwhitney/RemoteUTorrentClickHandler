@@ -1,10 +1,12 @@
-﻿using Microsoft.Win32;
+﻿using System;
+using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace RemoteUTorrentClickHandler.Features
 {
     class MagnetHandlerMapper
     {
-        public void RegisterHandlerToExecutable(string myPath)
+        public static void RegisterHandlerToExecutable(string myPath)
         {
             var regKey = Registry.CurrentUser.OpenSubKey("Software\\Classes", true);
 
@@ -15,6 +17,8 @@ namespace RemoteUTorrentClickHandler.Features
             magnetRoot.CreateSubKey(@"DefaultIcon").SetValue(string.Empty, "c:\\path\\to\\ico.ico");
             magnetRoot.CreateSubKey(@"shell").SetValue(string.Empty, "open");
             magnetRoot.CreateSubKey(@"shell\\open\\command").SetValue(string.Empty, myPath + " \"%1\"");
+
+            MessageBox.Show("Added magnet handler mapped to " + myPath);
         }
     }
 }
